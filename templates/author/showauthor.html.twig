@@ -1,0 +1,32 @@
+
+Nombre d'auteur:{{tabauthor |length}}
+<br>
+
+{% if tabauthor |length>0 and tabauthor is defined %}
+<table border="3">
+    <tr>
+    <td>id</td>
+    <td>image</td>
+    <td>username</td>
+    <td>email</td>
+    <td>nbr-book</td>
+    </tr>
+    {% set T=0  %}
+{% for a in tabauthor %}
+    <tr>
+        <td> {{a.id}}       </td>
+    <td><img src="{{asset(a.picture)}}" alt="img1" width="100" height="100"> </td>
+    <td>{{a.username | upper}}</td>
+    <td>{{a.email}}</td>
+    <td>{{a.nb_books}}</td>
+    </tr>
+
+    {% set T = T + a.nb_books %}
+{% endfor %}
+</table>
+{% else %}
+
+is empty
+{% endif %}
+
+{# Nombre d'auteur :{{T}}  #}
