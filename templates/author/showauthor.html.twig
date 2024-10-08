@@ -10,6 +10,7 @@ Nombre d'auteur:{{tabauthor |length}}
     <td>username</td>
     <td>email</td>
     <td>nbr-book</td>
+    <td>action</td>
     </tr>
     {% set T=0  %}
 {% for a in tabauthor %}
@@ -19,6 +20,8 @@ Nombre d'auteur:{{tabauthor |length}}
     <td>{{a.username | upper}}</td>
     <td>{{a.email}}</td>
     <td>{{a.nb_books}}</td>
+    <td><a href="{{path('app_author')}}">Details</a></td>
+    <td><a href="{{path('app_detailsauthor',{'id':a.id})}}">Details with param</a></td>
     </tr>
 
     {% set T = T + a.nb_books %}

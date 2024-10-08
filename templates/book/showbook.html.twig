@@ -1,0 +1,17 @@
+<table border="3">
+    <tr>
+        <td>id</td>
+        <td>title</td>
+        <td>pubdate</td>
+        <td>status</td>
+    </tr>
+{% for i in tabbook %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.publicationdate |date}}</td>
+        <td>{{i.enabled ? 'yes' : 'no'}}</td>
+        <td>{{i.author.username}}</td>
+    </tr>
+    {% endfor %}
+</table>

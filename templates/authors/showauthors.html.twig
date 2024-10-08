@@ -1,0 +1,16 @@
+<table border="3">
+    <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>email</td>
+    </tr>
+{% for a in tabauthors %}
+    <tr>
+        <td>{{a.id}}</td>
+        <td>{{a.username}}</td>
+        <td>{{a.email}}</td>
+        <td><a href="{{path('app_updateformauthors',{'id':a.id})}}">update</a></td>
+        <td><a href="{{path('app_deleteformauthors',{'id':a.id})}}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
